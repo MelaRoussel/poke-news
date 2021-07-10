@@ -1,5 +1,5 @@
 import { bindActionCreators } from 'redux';
-import { connectUser } from '../../reducers/userActions';
+import { connectUser } from '../../reducers/user/actions';
 import { connect } from 'react-redux';
 import Login from './component';
 
