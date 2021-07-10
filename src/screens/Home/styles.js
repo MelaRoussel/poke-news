@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
+    backgroundColor: '#3367B0',
+
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
@@ -9,15 +11,17 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   welcomeText: {
-    color: '#3367B0',
+    color: '#DADC25',
+    fontWeight: 'bold',
     justifyContent: 'flex-start',
     fontSize: 30,
   },
   signInText: {
     fontSize: 15,
+    color: '#fff',
   },
   button: {
-    backgroundColor: '#3367B0',
+    backgroundColor: '#DADC25',
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 20,
@@ -27,7 +31,8 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 15,
-    color: '#FFF',
+    fontWeight: 'bold',
+    color: '#3367B0',
     textTransform: 'uppercase',
   },
 });
