@@ -9,7 +9,8 @@ import { pokeBlue, pokeYellow } from '../../constants/colors';
 import { func, shape, string } from 'prop-types';
 
 export default function Home({ navigation, userName }) {
-  if (userName) return <News />;
+  if (userName) return <News navigation={navigation} />;
+
   return (
     <View style={styles.container}>
       <Text style={styles.welcomeText}>Welcome Poke User ! </Text>

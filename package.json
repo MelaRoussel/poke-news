@@ -9,6 +9,7 @@
     "expo-splash-screen": "~0.8.1",
     "expo-updates": "~0.4.1",
     "galio-framework": "^0.8.0",
+    "moment": "^2.29.1",
     "prettier": "^2.3.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",

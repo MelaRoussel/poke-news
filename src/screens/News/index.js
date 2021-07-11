@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import News from './component';
 import { getNewsFromAPI } from '../../reducers/news/actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   userName: state.userReducer.user.name,
   data: state.newsReducer.news || null,
+  navigation: ownProps.navigation,
 });
 
 const mapDispatchToProps = (dispatch) => ({

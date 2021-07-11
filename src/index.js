@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { enableScreens } from 'react-native-screens';
 
 import AnimatedAppLoader from './components/AnimatedAppLoader';
+import Article from './screens/Article';
 import Home from './screens/Home';
 import List from './screens/News';
 import Login from './screens/Login';
@@ -49,7 +50,7 @@ export default function App() {
               />
               <Stack.Screen
                 name="Article"
-                component={List}
+                component={Article}
                 options={({ route }) => ({ title: route.params.name })}
               />
               <Stack.Screen

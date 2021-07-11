@@ -781,12 +781,12 @@ const data = {
   ],
 };
 
-export default function News({ /* getAllNews,*/ userName }) {
+export default function News({ /* getAllNews,*/ navigation, userName }) {
   /* useEffect(() => {
     getAllNews();
   }, [data]);*/
 
-  const renderItem = ({ item }) => <NewsItem item={item} />;
+  const renderItem = ({ item }) => <NewsItem navigation={navigation} item={item} />;
 
   return (
     <View style={styles.container}>
