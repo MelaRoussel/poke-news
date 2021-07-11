@@ -1,17 +1,20 @@
-import AnimatedAppLoader from './components/AnimatedAppLoader';
-import Home from './screens/Home';
-import List from './screens/News';
-import Login from './screens/Login';
 import React from 'react';
-import pokeNewsSplash from './ressources/splash.png';
-import store from './store';
-import theme from './constants/theme';
 import { GalioProvider } from 'galio-framework';
-import { Logo } from './components/Logo';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { createStackNavigator } from '@react-navigation/stack';
 import { enableScreens } from 'react-native-screens';
+
+import AnimatedAppLoader from './components/AnimatedAppLoader';
+import Home from './screens/Home';
+import List from './screens/News';
+import Login from './screens/Login';
+import store from './store';
+import theme from './constants/colors';
+import { Logo } from './components/Logo';
+
+import pokeNewsLogo from './ressources/logo/pokenews-logo.png';
+import pokeNewsSplash from './ressources/splash.png';
 
 enableScreens();
 const Stack = createStackNavigator();
@@ -33,7 +36,9 @@ export default function App() {
                   fontWeight: 'bold',
                 },
                 headerTitleAlign: 'center',
-                headerTitle: (props) => <Logo {...props} />,
+                headerTitle: (props) => (
+                  <Logo width={200} height={50} sourceImage={pokeNewsLogo} {...props} />
+                ),
               }}
             >
               <Stack.Screen name="Home" component={Home} />

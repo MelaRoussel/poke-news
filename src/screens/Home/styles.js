@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { pokeBlue, pokeYellow } from '../../constants/colors';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#3367B0',
-
+    backgroundColor: pokeBlue,
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
@@ -11,7 +11,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   welcomeText: {
-    color: '#DADC25',
+    color: pokeYellow,
     fontWeight: 'bold',
     justifyContent: 'flex-start',
     fontSize: 30,
@@ -19,20 +19,5 @@ export default StyleSheet.create({
   signInText: {
     fontSize: 15,
     color: '#fff',
-  },
-  button: {
-    backgroundColor: '#DADC25',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 20,
-    width: 200,
-    height: 50,
-    borderRadius: 50,
-  },
-  buttonText: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#3367B0',
-    textTransform: 'uppercase',
   },
 });

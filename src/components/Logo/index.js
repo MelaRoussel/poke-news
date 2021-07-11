@@ -1,12 +1,10 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 
-import pokeNewsLogo from '../../ressources/logo/pokenews-logo.png';
-
-export function Logo() {
+export function Logo({ width, height, sourceImage }) {
   return (
     <View>
-      <Image style={{ width: 200, height: 50, resizeMode: 'contain' }} source={pokeNewsLogo} />
+      <Image style={{ width, height, resizeMode: 'contain' }} source={sourceImage} />
     </View>
   );
 }
