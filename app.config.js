@@ -1,10 +1,12 @@
 export default {
-  icon:
-    "https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/icon.png?raw=true",
+  icon: 'https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/icon.png?raw=true',
   splash: {
     image:
-      "https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/splash.png?raw=true",
-    resizeMode: "contain",
-    backgroundColor: "#ffffff",
+      'https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/splash.png?raw=true',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff',
+  },
+  ios: {
+    bundleIdentifier: 'com.mela.poke-news',
   },
 };
