@@ -4,23 +4,17 @@ import { API_URL, API_KEY, SERVER_URL } from '../constants';
 export const newsClient = axios.create({
   baseURL: API_URL,
   timeout: 5000,
-  headers: {
-    'X-Api-Key': API_KEY,
-  },
 });
 
 export const serverClient = axios.create({
   baseURL: SERVER_URL,
   timeout: 5000,
-  headers: {
-    'X-Api-Key': API_KEY,
-  },
 });
 
-export const getAllNewArticles = (queryString) =>
+export const getAllNewArticles = () =>
   newsClient({
     method: 'get',
-    url: queryString,
+    url: `everything?q=pokemon&sortBy=relevance&keyword=pokemon&pageSize=100&page=1&apiKey=${API_KEY}`,
   });
 
 export const login = (data) =>
