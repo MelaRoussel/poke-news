@@ -18,13 +18,14 @@ export const loginError = (error) => ({
   data: error,
 });
 
-export const connectUser = ({ name, password }) => {
+export const connectUser = ({ name, password, navigateTo }) => {
   return (dispatch) => {
     dispatch(loginRequest());
     login({ name, password })
       .then((response) => {
         dispatch(loginSuccess(response.data));
       })
+      .then(() => navigateTo())
       .catch((error) => {
         dispatch(loginError(error.message));
       });

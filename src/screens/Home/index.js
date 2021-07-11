@@ -1,22 +1,8 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import Home from './component';
 
-import Login from '../Login';
-import styles from './styles';
-import { BasicButton } from '../../components/BasicButton';
-import { pokeBlue, pokeYellow } from '../../constants/colors';
+const mapStateToProps = (state) => ({
+  userName: state.userReducer.user.name,
+});
 
-export default function Home({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcomeText}>Welcome Poke User ! </Text>
-      <Text style={styles.signInText}>Please sign in to see latest news on Pokemon</Text>
-      <BasicButton
-        color={pokeYellow}
-        textColor={pokeBlue}
-        buttonText="sign in"
-        onPress={() => navigation.navigate('Login', { name: 'Login' })}
-      />
-    </View>
-  );
-}
+export default connect(mapStateToProps)(Home);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput, View } from 'react-native';
+import { func, shape } from 'prop-types';
 
 import styles from './styles';
 import { BasicButton } from '../../components/BasicButton';
@@ -8,13 +9,9 @@ import { pokeBlue, pokeYellow } from '../../constants/colors';
 
 import pikaLogo from '../../ressources/pikalogo/pikalogo.png';
 
-export default function Login({ connectUser }) {
+export default function Login({ connectUser, navigation }) {
   const [name, onChangeName] = React.useState('');
   const [password, onChangePassword] = React.useState('');
-
-  function onSignIn() {
-    connectUser({ name, password });
-  }
 
   return (
     <View style={styles.container}>
@@ -38,7 +35,28 @@ export default function Login({ connectUser }) {
         style={styles.input}
         value={password}
       />
-      <BasicButton color={pokeYellow} textColor={pokeBlue} buttonText="sign in" onPress={() => onSignIn()} />
+      <BasicButton
+        color={pokeYellow}
+        textColor={pokeBlue}
+        buttonText="sign in"
+        onPress={() =>
+          connectUser({ name, password, navigateTo: () => navigation.navigate('Home', { name: 'News' }) })
+        }
+      />
     </View>
   );
 }
+
+Login.propTypes = {
+  connectUser: func,
+  navigation: shape({
+    navigate: func,
+  }).isRequired,
+};
+
+Login.defaultProps = {
+  connectUser: Function.prototype,
+  navigation: shape({
+    navigate: Function.prototype,
+  }),
+};

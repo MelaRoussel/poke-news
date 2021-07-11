@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const List = () => {
+const News = () => {
   return (
     <View style={styles.container}>
       <Text>hello page</Text>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default List;
+export default News;
