@@ -8,6 +8,14 @@ un bon compromis 😄
 - Lancer `yarn` ou `npm install`
 - Run `yarn start`
 
+### Se connecter sur l'appli
+Il faut utiliser les combinaison suivante 
+- Name: Mela 
+- Mot de passe : PokeNews
+ou 
+- Name: Dernier Cri
+- Mot de passe: SpecialUser
+
 ### Dev
 J'ai fait le dev sur windows n'ayant pas de mac a dispo.
 
