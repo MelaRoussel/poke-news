@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Asset } from 'expo-asset';
-import AppLoading from 'expo-app-loading';
-import { Animated, StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import AppLoading from 'expo-app-loading';
 import Constants from 'expo-constants';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
+import { Asset } from 'expo-asset';
 
 export default function AnimatedAppLoader({ children, image }) {
   const [isSplashReady, setSplashReady] = React.useState(false);

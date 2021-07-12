@@ -1,12 +1,13 @@
 export default {
-  icon: 'https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/icon.png?raw=true',
+  icon: './src/resources/pika-icon.png',
   splash: {
-    image:
-      'https://github.com/expo/expo/blob/master/templates/expo-template-blank/assets/splash.png?raw=true',
-    resizeMode: 'contain',
-    backgroundColor: '#ffffff',
+    image: './src/resources/splash.png',
+    resizeMode: 'cover',
   },
   ios: {
     bundleIdentifier: 'com.mela.poke-news',
+  },
+  android: {
+    package: 'com.mela.pokenews',
   },
 };

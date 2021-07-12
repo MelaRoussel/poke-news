@@ -12,8 +12,8 @@ import Login from './screens/Login';
 import store from './store';
 import { Logo } from './components/Logo';
 
-import pokeNewsLogo from './ressources/logo/pokenews-logo.png';
-import pokeNewsSplash from './ressources/splash.png';
+import pokeNewsLogo from './resources/logo/pokenews-logo.png';
+import pokeNewsSplash from './resources/splash.png';
 
 enableScreens();
 const Stack = createStackNavigator();

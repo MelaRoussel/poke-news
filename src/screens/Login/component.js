@@ -9,7 +9,7 @@ import { Logo } from '../../components/Logo';
 import { SnackBar } from '../../components/SnackBar';
 import { pokeBlue, pokeYellow } from '../../constants/colors';
 
-import pikaLogo from '../../ressources/pikalogo/pikalogo.png';
+import pikaLogo from '../../resources/pikalogo/pikalogo.png';
 
 export default function Login({ connectUser, navigation, isLoading, error }) {
   const [name, onChangeName] = useState('');
