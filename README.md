@@ -26,7 +26,7 @@ de compétences suffisante côté back-end pour faire quelque chose de propre.
 Mais heureusement que NodeJS reste du JS car ça m'a permis de faire le mini algo pour vérifier le bon Nom/Mot de passe
 et renvoyer une réponse 401 si ce n'est pas le cas et 200 si c'est bon avec le name dans la response.
 
-
+J'ai deployer le serveur sur heroku, n'ayant pas l'habitude de faire ça, la doc et la mise en place est ce que je trouvais le plus simple a utiliser!
 Côté front le projet est monté avec expo car j'en avais déjà entendu parler en bien via certains collègues.
 
 Après quelque temps de mise en place j'ai choisi la version expo with splashscreen example car j'en avais crée un sur
