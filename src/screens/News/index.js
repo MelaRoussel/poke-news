@@ -5,7 +5,7 @@ import { getNewsFromAPI } from '../../reducers/news/actions';
 
 const mapStateToProps = (state, ownProps) => ({
   userName: state.userReducer.user.name,
-  data: state.newsReducer.news || null,
+  data: state.newsReducer.news,
   navigation: ownProps.navigation,
 });
 
