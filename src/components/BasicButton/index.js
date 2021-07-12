@@ -1,14 +1,18 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, Text, TouchableOpacity } from 'react-native';
 import { func, string } from 'prop-types';
 
 import styles from './styles';
 import { pokeBlue, pokeYellow } from '../../constants/colors';
 
-export function BasicButton({ onPress, color, buttonText, textColor }) {
+export function BasicButton({ onPress, color, buttonText, textColor, isLoading }) {
   return (
     <TouchableOpacity style={{ ...styles.button, backgroundColor: color }} onPress={onPress}>
-      <Text style={{ ...styles.buttonText, color: textColor }}>{buttonText}</Text>
+      {isLoading ? (
+        <ActivityIndicator color={pokeBlue} />
+      ) : (
+        <Text style={{ ...styles.buttonText, color: textColor }}>{buttonText}</Text>
+      )}
     </TouchableOpacity>
   );
 }

@@ -1,24 +1,31 @@
+import Moment from 'moment';
 import React from 'react';
-import { Image, ScrollView, Text } from 'react-native';
+import { Image, ScrollView, Text, Linking } from 'react-native';
 
 import styles from './styles';
 import { BasicButton } from '../../components/BasicButton';
-import Moment from 'moment';
+
+const openURL = (url) => {
+  Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+};
 
 export default function Article({ route }) {
   const { item } = route.params;
-  const formattedDate = Moment(item.publishedAt).format('LLLL');
+  if (!item) return null;
+
+  const { author, content, description, publishedAt, source, title, url, urlToImage } = item;
+  const formattedDate = Moment(publishedAt).format('LLLL');
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.articleTitle}>{item.title}</Text>
-      <Image style={styles.articleImage} source={{ uri: item.urlToImage }} />
-      <Text style={styles.dateAndAuthor}>Pubished {formattedDate}</Text>
-      <Text style={styles.dateAndAuthor}>By {item.author}</Text>
-      <Text style={styles.description}>{item.description}</Text>
-      <Text style={styles.content}>{item.content}</Text>
-      <Text style={styles.dateAndAuthor}>source: {item.source.name}</Text>
-      <BasicButton buttonText="go to article page" />
+      <Text style={styles.articleTitle}>{title}</Text>
+      <Image style={styles.articleImage} source={{ uri: urlToImage }} />
+      <Text style={styles.dateAndAuthor}>Published {formattedDate}</Text>
+      {author && <Text style={styles.dateAndAuthor}>By {author}</Text>}
+      <Text style={styles.description}>{description}</Text>
+      <Text style={styles.content}>{content}</Text>
+      {source && <Text style={styles.dateAndAuthor}>source: {source.name}</Text>}
+      <BasicButton buttonText="go to article page" onPress={() => openURL(url)} />
     </ScrollView>
   );
 }

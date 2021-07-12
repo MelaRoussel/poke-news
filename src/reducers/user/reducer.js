@@ -10,11 +10,11 @@ export default (state = initialState, action = initialAction) => {
 
   switch (type) {
     case LOGIN_REQUEST:
-      return state;
+      return { ...state, loading: true, error: '' };
     case LOGIN_SUCCESS:
-      return { ...state, user: { name: data.username } };
+      return { ...state, user: { name: data.username }, loading: false, error: '' };
     case LOGIN_ERROR:
-      return { ...state, error: data };
+      return { ...state, error: data, loading: false };
     default:
       return state;
   }

@@ -2,8 +2,8 @@ import React from 'react';
 import { FlatList, Text, View } from 'react-native';
 import { func, shape } from 'prop-types';
 
-import styles from './styles';
 import NewsItem from '../../components/NewsItem';
+import styles from './styles';
 
 const data = {
   status: 'ok',
@@ -800,7 +800,12 @@ export default function News({ /* getAllNews,*/ navigation, userName }) {
         </View>
       </View>
       <View style={styles.list}>
-        <FlatList data={data.articles} renderItem={renderItem} initialNumToRender={10} />
+        <FlatList
+          data={data.articles}
+          renderItem={renderItem}
+          initialNumToRender={10}
+          keyExtractor={(item, id) => id.toString()}
+        />
       </View>
     </View>
   );

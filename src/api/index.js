@@ -14,7 +14,7 @@ export const serverClient = axios.create({
 export const getAllNewArticles = () =>
   newsClient({
     method: 'get',
-    url: `everything?q=pokemon&sortBy=relevance&keyword=pokemon&pageSize=100&page=1&apiKey=${API_KEY}`,
+    url: `everything?language=en&q=pokemon&sortBy=relevancy&pageSize=100&page=1&apiKey=${API_KEY}`,
   });
 
 export const login = (data) =>

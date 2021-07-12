@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextInput, View } from 'react-native';
-import { func, shape } from 'prop-types';
+import { bool, func, shape, string } from 'prop-types';
 
 import styles from './styles';
 import { BasicButton } from '../../components/BasicButton';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Logo } from '../../components/Logo';
+import { SnackBar } from '../../components/SnackBar';
 import { pokeBlue, pokeYellow } from '../../constants/colors';
 
 import pikaLogo from '../../ressources/pikalogo/pikalogo.png';
 
-export default function Login({ connectUser, navigation }) {
-  const [name, onChangeName] = React.useState('');
-  const [password, onChangePassword] = React.useState('');
+export default function Login({ connectUser, navigation, isLoading, error }) {
+  const [name, onChangeName] = useState('');
+  const [password, onChangePassword] = useState('');
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
       <View style={styles.logoWrapper}>
         <Logo width={300} height={200} sourceImage={pikaLogo} />
       </View>
+      {error ? <SnackBar color="#D32F2F" message="Wrong password or name, please try again" /> : null}
       <TextInput
         color="black"
         onChangeText={onChangeName}
@@ -39,11 +42,12 @@ export default function Login({ connectUser, navigation }) {
         color={pokeYellow}
         textColor={pokeBlue}
         buttonText="sign in"
+        isLoading={isLoading}
         onPress={() =>
           connectUser({ name, password, navigateTo: () => navigation.navigate('Home', { name: 'News' }) })
         }
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
@@ -52,6 +56,8 @@ Login.propTypes = {
   navigation: shape({
     navigate: func,
   }).isRequired,
+  isLoading: bool,
+  error: string,
 };
 
 Login.defaultProps = {
@@ -59,4 +65,6 @@ Login.defaultProps = {
   navigation: shape({
     navigate: Function.prototype,
   }),
+  isLoading: false,
+  error: null,
 };

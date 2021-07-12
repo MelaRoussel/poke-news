@@ -5,6 +5,8 @@ import Login from './component';
 
 const mapStateToProps = (state) => ({
   name: state.userReducer.user.name,
+  isLoading: state.userReducer.loading,
+  error: state.userReducer.error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
