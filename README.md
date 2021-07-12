@@ -12,7 +12,9 @@ un bon compromis 😄
 Il faut utiliser les combinaison suivante 
 - Name: Mela 
 - Mot de passe : PokeNews
-ou 
+
+ou
+
 - Name: Dernier Cri
 - Mot de passe: SpecialUser
 
